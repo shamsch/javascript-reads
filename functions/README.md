@@ -56,6 +56,51 @@ var anothervar = aFunc;
 anothervar('Remon');
 ```
 
+## Map, Filter, Reduce
+
+- Map is a higher order function that can be applied on an array with a callback function as argument. It returns a new array with the results of calling the callback function on each element of the array. Usually used to traverse an array and perform some operation on each element.
+
+```javascript
+var arr = [1, 2, 3, 4, 5];
+
+var newArr = arr.map(function (item) {
+    return item * 2;
+});
+
+console.log(newArr);
+```
+
+- Filter is similar to map. It returns a new array with the elements that return true when passed to the callback function. Usually used to filter an array based on some condition.
+
+```javascript
+var arr = [1, 2, 3, 4, 5];
+
+var newArr = arr.filter(function (item) {
+    return item % 2 === 0;
+});
+
+console.log(newArr);
+```
+
+- Reduce is a higher order function that takes a callback function as argument. It returns a single value after performing some operation on each element of the array. It takes two arguments, the first one is the callback and the second one is an initial value. The initial value is optional and if not provided, the first element of the array is used as the initial value. Then, the callback function first argument is the initial value and the second argument is the current element of the array. The return value of the callback function is used as the initial value for the next iteration as it traverses the array.
+
+```javascript
+var arr = [1, 2, 3, 4, 5];
+
+var sum = arr.reduce(function (prev, curr) {
+    return prev + curr;
+}, 0);
+
+//average 
+
+var avg = arr.reduce(function (prev, curr) {
+    return prev + curr;
+}, 0) / arr.length;
+
+console.log(sum);
+console.log(avg);
+```
+
 
 
 
