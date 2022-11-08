@@ -116,6 +116,60 @@ Only works with functions created using function expression. Arrow functions do 
 
 
 
+## What is hoisting? 
+
+JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+
+```javascript
+
+console.log(a); // undefined
+
+var a = 10;
+
+console.log(a); // 10
+
+b(); // I am a function
+
+function b() {
+    console.log('I am a function');
+}
+
+
+```
+## What is closure?
+
+A closure is a function that has access to the parent scope, even after the parent function has closed.
+
+```javascript
+
+function a() {
+    var x = 10;
+    return function b() {
+        console.log(x);
+    }
+}
+
+var c = a();
+
+a(); // function b() { console.log(x); }
+c(); // 10
+
+```
+
+## IIFE
+
+IIFE stands for Immediately Invoked Function Expression. It is a function that is executed as soon as it is defined. It is used to create a new scope and avoid polluting the global scope.
+
+```javascript
+
+(function () {
+    var x = 10;
+    console.log(x);
+})();
+
+console.log(x); // ReferenceError: x is not defined
+
+```
 
 
 
