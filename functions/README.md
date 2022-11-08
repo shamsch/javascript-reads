@@ -101,6 +101,19 @@ console.log(sum);
 console.log(avg);
 ```
 
+FYI, You can pass a second arugment in `map()` and `filter()` as well. It can be used to set the `this` value of the callback function.
+
+```javascript
+var arr = [1, 2, 3, 4, 5];
+
+var newArr = arr.map(function (item) {
+    return item * this.multiplier;
+}, {multiplier: 2});
+
+console.log(newArr);
+```
+Only works with functions created using function expression. Arrow functions do not have their own `this` value. They inherit the `this` value of the enclosing context.
+
 
 
 
